@@ -17,33 +17,8 @@ void get_URL(const string &host, const string &path) {
     // (not just one call to read() -- everything) until you reach
     // the "eof" (end of file).
 
-    auto tcp_sc = TCPSocket();
-    auto addr = Address(host,"http");
-    tcp_sc.connect(addr);
-
-    tcp_sc.write("GET ");
-    tcp_sc.write(path);
-    tcp_sc.write(" HTTP/1.1");
-    tcp_sc.write("\r\n");
-
-    tcp_sc.write("Host: ");
-    tcp_sc.write(host);
-    tcp_sc.write("\r\n");
-
-    tcp_sc.write("Connection: ");
-    tcp_sc.write("close");
-    tcp_sc.write("\r\n");
-    tcp_sc.write("\r\n");
-    
-    while(!tcp_sc.eof()) // 这里返回的是一个 bool 类型
-    {
-        cout << tcp_sc.read();
-    }
-
-    tcp_sc.close();
-
-    // cerr << "Function called: get_URL(" << host << ", " << path << ").\n";
-    // cerr << "Warning: get_URL() has not been implemented yet.\n";
+    cerr << "Function called: get_URL(" << host << ", " << path << ").\n";
+    cerr << "Warning: get_URL() has not been implemented yet.\n";
 }
 
 int main(int argc, char *argv[]) {
